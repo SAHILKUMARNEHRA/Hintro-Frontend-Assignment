@@ -4,6 +4,7 @@ import "./Sidebar.css";
 import FeedbackModal from "../FeedbackModal/FeedbackModal.jsx";
 import FeedbackHistoryModal from "../FeedbackModal/FeedbackHistoryModal.jsx";
 import { useApi } from "../../hooks/useApi.js";
+import { useUser } from "../../context/UserContext.jsx";
 
 function InfoBadge() {
   return <span className="sidebar-info">ⓘ</span>;
@@ -112,6 +113,7 @@ function NavItem({ to, label, icon, showInfo, onNavigate }) {
 export default function Sidebar({ mobileOpen, onCloseMobile }) {
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
+  const { userId, setUserId } = useUser();
   const { data: usageData } = useApi("/api/auth/dashboard");
 
   const usageText = useMemo(() => {
@@ -131,6 +133,28 @@ export default function Sidebar({ mobileOpen, onCloseMobile }) {
             </button>
           </div>
           <div className="sidebar-logo">Hintro</div>
+          <div className="sidebar-user-switch" role="group" aria-label="User switch">
+            <button
+              type="button"
+              className={`sidebar-user-pill ${userId === "u1" ? "is-active" : ""}`}
+              onClick={() => {
+                setUserId("u1");
+                onCloseMobile?.();
+              }}
+            >
+              u1
+            </button>
+            <button
+              type="button"
+              className={`sidebar-user-pill ${userId === "u2" ? "is-active" : ""}`}
+              onClick={() => {
+                setUserId("u2");
+                onCloseMobile?.();
+              }}
+            >
+              u2
+            </button>
+          </div>
         </div>
 
         <nav className="sidebar-nav">

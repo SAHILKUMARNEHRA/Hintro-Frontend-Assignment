@@ -23,6 +23,27 @@
   gap: var(--space-lg);
 }
 
+.sidebar-user-switch {
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+
+.sidebar-user-pill {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: var(--border-default);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar-user-pill.is-active {
+  background: var(--color-accent-light);
+  color: var(--color-text-primary);
+}
+
 .sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -171,5 +192,9 @@
   .sidebar-mobile-close {
     display: flex;
     justify-content: flex-start;
+  }
+
+  .sidebar-user-switch {
+    display: inline-flex;
   }
 }

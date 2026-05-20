@@ -74,6 +74,7 @@ export default function Header({ onOpenMobileNav }) {
 
   const onLogout = () => {
     resetUserToDefault();
+    window.alert("Logged out successfully! (Mock action)");
     window.location.reload();
   };
 
@@ -86,6 +87,8 @@ export default function Header({ onOpenMobileNav }) {
           </button>
           <div className="header-title">{title}</div>
         </div>
+
+        <div className="header-title-mobile">{title}</div>
 
         <div className="header-right">
           <button type="button" className="btn btn-outline header-tutorial">
@@ -121,6 +124,29 @@ export default function Header({ onOpenMobileNav }) {
             </button>
 
             <div className={`header-menu ${menuOpen ? "is-open" : ""}`} role="menu">
+              <div className="header-menu-switch" role="group" aria-label="User switch">
+                <button
+                  type="button"
+                  className={`header-menu-pill ${userId === "u1" ? "is-active" : ""}`}
+                  onClick={() => {
+                    setUserId("u1");
+                    setMenuOpen(false);
+                  }}
+                >
+                  u1
+                </button>
+                <button
+                  type="button"
+                  className={`header-menu-pill ${userId === "u2" ? "is-active" : ""}`}
+                  onClick={() => {
+                    setUserId("u2");
+                    setMenuOpen(false);
+                  }}
+                >
+                  u2
+                </button>
+              </div>
+              <div className="header-menu-divider" />
               <button
                 type="button"
                 className="header-menu-item"
