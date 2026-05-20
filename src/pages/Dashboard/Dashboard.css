@@ -15,6 +15,10 @@
   gap: var(--space-lg);
 }
 
+.dash-welcome-left {
+  min-width: 0;
+}
+
 .dash-hello {
   font-size: var(--font-size-2xl);
   font-weight: 700;
@@ -44,6 +48,12 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .dash-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .dash-error {
@@ -160,11 +170,11 @@
   }
 
   .dash-start {
-    display: none;
+    display: none !important;
   }
 
   .dash-start-mobile {
-    display: inline-flex;
+    display: inline-flex !important;
   }
 
   .dash-stats {

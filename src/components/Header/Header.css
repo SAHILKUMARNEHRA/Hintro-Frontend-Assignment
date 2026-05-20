@@ -158,4 +158,14 @@
   .header-tutorial {
     display: none;
   }
+
+  .header-switch {
+    display: none;
+  }
+
+  .header-avatar-btn {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+  }
 }
