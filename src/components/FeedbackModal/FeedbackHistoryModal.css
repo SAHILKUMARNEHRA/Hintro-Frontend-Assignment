@@ -1,0 +1,136 @@
+.fb-h-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-overlay);
+  z-index: var(--z-modal);
+}
+
+.fb-h-modal {
+  width: min(640px, calc(100vw - 48px));
+  max-height: calc(100vh - 80px);
+  overflow: auto;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  border: var(--border-default);
+  padding: var(--space-xl);
+}
+
+.fb-h-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.fb-h-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-md) 0;
+}
+
+.fb-h-empty {
+  color: var(--color-text-secondary);
+  padding: var(--space-md) 0;
+}
+
+.fb-h-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.fb-h-item {
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.fb-h-stars {
+  display: flex;
+  gap: 2px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.fb-h-star {
+  color: var(--color-border);
+}
+
+.fb-h-star.is-active {
+  color: var(--color-text-primary);
+}
+
+.fb-h-message {
+  margin-top: var(--space-sm);
+  color: var(--color-text-secondary);
+}
+
+.fb-h-date {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.fb-h-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-xl);
+}
+
+@keyframes fbHModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fbHModalOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fbHFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fbHFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fb-h-backdrop.is-open {
+  animation: fbHFadeIn 180ms ease forwards;
+}
+
+.fb-h-backdrop.is-closed {
+  animation: fbHFadeOut 180ms ease forwards;
+}
+
+.fb-h-modal.is-open {
+  animation: fbHModalIn 220ms ease forwards;
+}
+
+.fb-h-modal.is-closed {
+  animation: fbHModalOut 180ms ease forwards;
+}

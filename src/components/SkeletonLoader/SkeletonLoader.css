@@ -1,0 +1,26 @@
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-skeleton-bg);
+  border-radius: var(--radius-sm);
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-shimmer-0) 0%,
+    var(--color-shimmer-1) 50%,
+    var(--color-shimmer-0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

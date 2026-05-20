@@ -1,0 +1,151 @@
+.fb-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-overlay);
+  z-index: var(--z-modal);
+}
+
+.fb-modal {
+  width: min(560px, calc(100vw - 48px));
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  border: var(--border-default);
+  padding: var(--space-xl);
+}
+
+.fb-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.fb-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-md) 0;
+}
+
+.fb-step {
+  padding: var(--space-sm) 0;
+}
+
+.fb-stars {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.fb-star {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.fb-star:hover {
+  background: var(--color-hover-bg);
+  transform: translateY(-1px);
+}
+
+.fb-textarea {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: var(--border-default);
+  padding: var(--space-md);
+  resize: none;
+  outline: none;
+}
+
+.fb-textarea:focus {
+  border-color: var(--color-focus-border);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.fb-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.fb-submit {
+  width: 120px;
+}
+
+.fb-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fb-skip {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  font-size: var(--font-size-sm);
+}
+
+.fb-success {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+@keyframes fbModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fbModalOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fbFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fbFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fb-backdrop.is-open {
+  animation: fbFadeIn 180ms ease forwards;
+}
+
+.fb-backdrop.is-closed {
+  animation: fbFadeOut 180ms ease forwards;
+}
+
+.fb-modal.is-open {
+  animation: fbModalIn 220ms ease forwards;
+}
+
+.fb-modal.is-closed {
+  animation: fbModalOut 180ms ease forwards;
+}

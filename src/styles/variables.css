@@ -1,0 +1,70 @@
+:root {
+  --color-white: #ffffff;
+  --color-bg-main: #f9f9f9;
+  --color-sidebar-bg: #ffffff;
+  --color-border: #e8e8e8;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-text-muted: #999999;
+  --color-accent: #6c47ff;
+  --color-accent-light: #ede9ff;
+  --color-btn-primary: #111111;
+  --color-btn-primary-text: #ffffff;
+  --color-upgrade-btn: #6b6b6b;
+  --color-overlay: rgba(0, 0, 0, 0.25);
+  --color-hover-bg: rgba(0, 0, 0, 0.03);
+  --color-soft-bg: rgba(0, 0, 0, 0.04);
+  --color-skeleton-bg: rgba(0, 0, 0, 0.06);
+  --color-participant-bg: #f0f0f0;
+  --color-participant-icon: rgba(0, 0, 0, 0.35);
+  --color-focus-border: rgba(108, 71, 255, 0.5);
+  --color-focus-ring: rgba(108, 71, 255, 0.12);
+  --color-shimmer-0: rgba(255, 255, 255, 0);
+  --color-shimmer-1: rgba(255, 255, 255, 0.6);
+  --color-star: #f5c842;
+
+  --color-icon-red: #ff5b5b;
+  --color-icon-teal: #3aa9b2;
+  --color-icon-green: #2c9b4b;
+  --color-icon-purple: var(--color-accent);
+
+  --color-icon-bg-red: #fde8e8;
+  --color-icon-bg-teal: #e0f4f4;
+  --color-icon-bg-green: #e5f5e8;
+  --color-icon-bg-purple: #ede9ff;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 28px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --border-default: 1px solid var(--color-border);
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 4px 10px rgba(0, 0, 0, 0.06);
+  --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  --sidebar-width: 260px;
+  --header-height: 60px;
+
+  --z-overlay: 40;
+  --z-modal: 60;
+}
